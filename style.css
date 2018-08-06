@@ -1,0 +1,254 @@
+@import 'https://fonts.googleapis.com/css?family=Alegreya+Sans';
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5; /* πόσο θα απέχουν τα divs*/
+    /*font: 15px/1.5 Arial, Helvetica, sans-serif; ----πιο σύντομος τρόπος*/
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+
+/*-----GLOBAL STYLES-----------*/
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* σιγουρεύω ότι κάτι δε θα πάει εκτός div*/
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Τα button subscribe, send*/
+.button_1{
+    height: 25px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.dark{
+    padding: 15px;
+    background: #35424a;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/*------HEADER-----------*/
+
+header{
+    background-color: #35424a;
+    color: #ffffff;
+    padding-top: 50px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header #branding{
+    float: left; 
+}
+
+header #branding h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    margin-top: 10px;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+header li{
+    float: left; /*αναδιατάσσει τα ονόματα των links*/
+    display: inline;
+    padding: 0 20px 0 20px; /* πόσο θα απέχουν τα λινκς μεταξύ τους */
+    text-transform: uppercase;  /* κάνει κεφαλαία τα γράμματα στο μενού*/
+}
+
+/*για να είναι πορτοκαλί η επιλεγμένη κατηγορία(.current a) αλλά και το Vasd(.highlight)*/
+ header .highlight, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover{
+    color:#cccccc;
+    font-weight: bold;
+}
+
+/*------------SHOWCASE--------------------*/
+
+#showcase{
+    min-height: 400px; /* ο χώρος που θα πιάνει το συγκεκριμένο section*/
+    background-image: url('Images/sec.jpg') no-repeat 0 -400px; /* δε λειτούργησε */
+    text-align: center;
+    color:  #4A79A5;
+}
+
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px; /* πόσο θα απέχει από την παράγραφο ακριβώς από κάτω */ 
+}
+
+#showcase p{
+    font-size: 20px;
+}
+
+
+/*----------NEWSLETTER--------------*/
+#newsletter{
+    padding: 15px;
+    color: white;
+    background: #35424a;
+}
+
+#newsletter h1{
+    float: left;
+}
+
+#newsletter form{
+    float: right;
+    margin-top: 15px;
+}
+
+/*css για το πεδίο του mail*/
+#newsletter input[type="email"] {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+
+/*---------------Boxes------------------*/
+
+#boxes{
+    margin-top: 20px;
+}
+
+#boxes .box{
+    float: left;
+    width: 30%; /*ώστε να χωράνε όλα στην ίδια γραμμή*/
+    padding: 10px;
+    text-align: center;
+}
+
+/*μορφοποίηση εικόνων */
+#boxes .box img{
+    width: 35%;
+}
+
+
+/*-----------SIDEBAR----(μόνο στις About, Services pages το έχω)/τοποθέτηση του sidebar(What we do and Contuct Us)-----------*/
+
+aside#sidebar{
+    float: right;
+    width: 30%;
+    margin-top: 50px;
+}
+
+/*---------About--------------------*/
+ul#what_we_do li{
+    list-style: none;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+/*----Services----μορφοποίηση εσωτερικού πεδίων φόρμα(padding στο placeholder και σωστή στοίχιση των πεδίων)*/
+aside#sidebar .contactUs input, aside#sidebar .contactUs textarea{
+    width: 90%;
+    padding: 3px;
+}
+
+
+
+
+/*----------MAIN-COL-----(μόνο στις About, Services pages το έχω)/τοποθέτηση της main(στη main του About δεν έχω κάποια ιδιαίτερη μορφοποίηση παραμόνο στη main του Services) -----------*/
+
+article#main-col{
+    float: left;
+    width: 65%;
+}
+
+/*----------Services(μόνο στη Services)-------------*/
+
+ul#services li{
+    list-style: none;
+    padding: 20px;
+    margin-bottom: 5px;
+    border: #cccccc solid 1px;
+    background: #e6e6e6;
+}
+
+
+
+/*-------------Footer-----------*/
+
+footer{
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background-color: #e8491d;
+    text-align: center;
+    border-radius: 5px;
+    height: 60px;
+   
+}
+
+
+
+footer p{
+   margin: 5px;/* το margin τηε παραγράφου σε σχέση με το footer(το πορτοκαλί)*/
+     
+}
+
+
+/*-----------Media Queries----------*/
+
+@media(max-width: 768px) {
+    header #branding,
+    header nav,
+    header navli,
+    #newsletter h1,
+    newsletter form,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header{
+        padding-bottom: 20px;
+    }
+    #showcase h1{
+        margin-top: 40px;
+    }
+    #newsletter button{
+        display: block;
+        width: 100%;
+    }
+    #newsletter form input [type="email"]{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+  
+}
+
+
+
